@@ -1,0 +1,40 @@
+<!-- 
+    Dynamic class
+    If 
+    Bidirectional binding 
+    Dynamic Inline Style 
+    Events
+    For
+ -->
+<div [ngClass]="{'red-border': redBorderEnabled}">
+    <h2 *ngIf="randomNr > 10"> Daugiau uz 10</h2>
+    <h2 *ngIf="randomNr < 10"> Maziau uz 10</h2>
+    <h1>{{ randomNr}}</h1>
+    <input type="text"
+        [(ngModel)]="inputText"
+        [ngStyle]="{background: randomNr > 10 ? 'green' : 'red'}"
+    >
+    <button (click)="generateRandomNmber()">Random</button>
+    <button (click)="addRedBorder()">Red border</button>
+
+    <hr>
+    <h3>For</h3>
+    <div *ngFor="let name of names; let i = index">
+        {{ i }} {{ name }}
+    </div>
+</div>
+
+<!-- 
+    Props drilling Parent to Child (Databinidiing)
+ -->
+ <hr>
+ <h3>Props drilling from Parent to Child (DataBinding)</h3>
+ <h4>{{ car.name }}</h4>
+ <h4>{{ car.model }}</h4>
+
+ <!-- 
+    Props drilling Child to Parent (Databinidiing)
+ -->
+ <hr>
+ <h3>Props drilling from Child to Parent</h3>
+ <button (click)="sendDataToParent()">Send data to Parent</button>
